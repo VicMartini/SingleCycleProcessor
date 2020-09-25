@@ -4,6 +4,8 @@ module imem #(parameter N = 32)(input logic [5:0] addr, output logic [N-1:0] q);
 	
 	initial
 		begin 
+		/*	
+			ORIGINAL PROGRAM
 			memory[0:18] = '{32'hf8000000, 32'hf8008001,
 								32'hf8010002, 32'hf8018003,
 								32'hf8020004, 32'hf8028005,
@@ -14,7 +16,10 @@ module imem #(parameter N = 32)(input logic [5:0] addr, output logic [N-1:0] q);
 								32'hcb0e01ce, 32'hb400004e,
 								32'hcb01000f, 32'h8b01000f,
 								32'hf803800f};
-								
+		*/
+		
+		$readmemh("/home/vmartini/intelFPGA_lite/20.1/Projects/ProcessorArm/program3.tv", memory);
+		
 		
 		end
 		

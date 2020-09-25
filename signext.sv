@@ -1,4 +1,4 @@
-module signext(input logic [31:0] a, output logic[31:0] y);
+module signext(input logic [31:0] a, output logic[63:0] y);
 
 	always_comb
 		begin
