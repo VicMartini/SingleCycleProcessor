@@ -1,10 +1,10 @@
 module ESync(input logic set, reset, output logic OUT);
 	logic tempOut = 0;
 	assign OUT = tempOut;
-	always @(posedge set, posedge reset)
+	always_ff @(posedge set, posedge reset)
 		begin
-			if (set) tempOut = 1;
-			else if (reset) tempOut = 0;
+			if (set) begin tempOut = 1; $display("SET"); end
+			if (reset) begin tempOut = 0; $display("RESET"); end
 		end
 		
 endmodule

@@ -18,7 +18,7 @@ module imem #(parameter N = 32)(input logic [5:0] addr, output logic [N-1:0] q);
 								32'hf803800f};
 		*/
 		
-		$readmemh("/home/vmartini/intelFPGA_lite/20.1/Projects/ProcessorArm/program1.tv", memory);
+		$readmemh("/home/vmartini/intelFPGA_lite/20.1/Projects/ProcessorWithExceptions/program.tv", memory);
 		
 		
 		end

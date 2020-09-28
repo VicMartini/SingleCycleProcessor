@@ -8,5 +8,5 @@ module fetch(input logic PCSrc_F, clk,input logic reset, EProc_F, input logic [6
 	adder adder_unit(.a(flopr_output), .b(64'd4), .y(adder_to_mux));
 	
 	assign imem_addr_F = flopr_output;
-	assign NextPC_F = mux_to_pc;
+	assign NextPC_F = mux0_to_mux1;
 	endmodule
