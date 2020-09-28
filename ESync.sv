@@ -1,9 +1,10 @@
 module ESync(input logic set, reset, output logic OUT);
-
-	always_ff @(posedge set, posedge reset)
+	logic tempOut = 0;
+	assign OUT = tempOut;
+	always @(posedge set, posedge reset)
 		begin
-			if (set) OUT = 1;
-			if (reset) OUT = 0;
+			if (set) tempOut = 1;
+			else if (reset) tempOut = 0;
 		end
 		
 endmodule

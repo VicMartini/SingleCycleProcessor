@@ -26,7 +26,7 @@ module flopr_e_tb();
 	always @(negedge clk) // Feed numbers into the data port on the falling edge of clk
 		begin
 			d = testvectors[i]; #10; d = '0;
-			if (i >= 2) reset = 0; // Turn the reset signal off, right when the third cycle finsihes
+			if (i >= 3) reset = 0; // Turn the reset signal off, right when the third cycle finsihes
 			if (i >= 5) enable = 0; // Turn off the enable signal when the 6th cycle finishes
 			if (i >= 9) // End the simulation after 10 cycles;
 				begin
@@ -38,7 +38,7 @@ module flopr_e_tb();
 	always @(posedge clk)
 		begin
 			#1;
-			if ((q !== testvectors[i] && (i > 2 && i < 6)) || (q !== '0 && (i <= 2 || i >= 5))) error_count += 1;
+			if ((q !== testvectors[i] && (i > 2 && i < 5)) || (q !== '0 && (i <= 2 ))) error_count += 1;
 			$display("Output         | %b", q);
 			$display("Expected value | %b", testvectors[i]);
 			i += 1;
